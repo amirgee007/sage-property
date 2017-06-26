@@ -4,7 +4,7 @@
     </div>
 
     <!--logo start-->
-    <a href="/admin" class="logo" style="color: #fd7e80;font-family: cursive">Sage <span class="lite">Property</span></a>
+    <a href="/" class="logo" target="_blank" style="color: #fd7e80;font-family: cursive">Sage <span class="lite">Property</span></a>
     <!--logo end-->
 
    {{-- <div class="nav search-row" id="top_menu">
@@ -77,44 +77,4 @@
     </div>
 </header>
 <!--header end-->
-
-<!--sidebar start-->
-<aside>
-    <div id="sidebar"  class="nav-collapse ">
-        <!-- sidebar menu start-->
-        <ul class="sidebar-menu">
-            <li class="active">
-                <a class="" href="/admin">
-                    <i class="icon_house_alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            {{--<li class="active">--}}
-                {{--<a class="" href="/admin/admin_jokes">--}}
-                    {{--<i class="icon_folder-add"></i>--}}
-                    {{--<span>Add admin_joke</span>--}}
-                {{--</a>--}}
-            {{--</li> --}}
-            <li class="">
-                <a class="" href="/admin/team">
-                    <i class="icon_folder-open_alt"></i>
-                    <span>Our Team</span>
-                </a>
-            </li>
-            <li >
-                <a class="" href="/admin/enquire">
-                    <i class="icon_contacts_alt"></i>
-                    <span>Enquiries</span>
-                </a>
-            </li>
-            <li >
-                <a class="" href="/admin/contact">
-                    <i class="icon_contacts_alt"></i>
-                    <span>Contacts</span>
-                </a>
-            </li>
-        </ul>
-        <!-- sidebar menu end-->
-    </div>
-</aside>
-<!--sidebar end-->
+@include('admin.partials.sidebar')
