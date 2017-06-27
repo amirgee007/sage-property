@@ -55,6 +55,10 @@ function closeS() {
 }
 
 </script>
+
+    <script>
+        $('div.alert').not('.alert-important').delay(2000).fadeOut(3000);
+    </script>
     <!-- Google analytics -->
     <!-- End google analytics -->
 </body>

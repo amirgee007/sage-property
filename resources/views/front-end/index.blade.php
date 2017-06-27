@@ -1,6 +1,7 @@
 {{--@include('front-end.partials.base')--}}
 @extends('front-end.partials.base')
 @section('content')
+
 <section id="our_story">
 
     <div class="container">

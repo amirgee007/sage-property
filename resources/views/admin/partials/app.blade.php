@@ -37,7 +37,7 @@
     <link href="/admin_sage/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 </head>
@@ -143,6 +143,9 @@
 
 </script>
 
+<script>
+    $('#flash-overlay-modal').modal();
+</script>
 
 <script>
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);

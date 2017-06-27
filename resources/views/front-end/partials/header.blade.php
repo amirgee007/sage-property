@@ -8,7 +8,6 @@
                     <div class="top_header_bar">
                         <a onclick="openNav()" href="#"><img src="frontend/icons/bars.png"></a>
                     </div>
-
                     <div class="sign_in">
                         @if (Auth::guest())
                         <a  data-toggle="modal" data-target="#loginModal" title="Sign In" href="#"><img src="frontend/icons/Userx24.png"> Sign in</a>
@@ -42,6 +41,8 @@
                             </ul>
                         @endif
                     </div>
+                    @include('flash::message')
+
                 </div>
             </div>
 

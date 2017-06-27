@@ -12,7 +12,8 @@
 */
 
 Route::get('/test', function () {
-    return view('admin.passwords.resetPassword');
+
+    return view('front-end.passwords.resetPassword');
 });
 
 Route::get('/', function () {

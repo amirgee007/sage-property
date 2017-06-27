@@ -128,4 +128,9 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
+    <script>
+
+        toastr.info("Password Reset Link sent")
+    </script>
 @endsection
+
