@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-xs-12">
 
-                                    <button style="margin-top: 30px" type="submit"  name="submit" class="btn btn-danger">Password Reset Link <img src="frontend/icons/Next-Arrow.png"></button>
+                                    <button style="margin-top: 30px; background-color: #fe2846" type="submit"  name="submit" class="btn btn-danger">Password Reset Link <img src="frontend/icons/Next-Arrow.png"></button>
                                 </div>
                             </form>
 

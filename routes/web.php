@@ -16,6 +16,9 @@ Route::get('/test', function () {
     return view('front-end.passwords.resetPassword');
 });
 
+Route::get('auth/facebook', 'AdminAuth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'AdminAuth\AuthController@handleProviderCallback');
+
 Route::get('/', function () {
     return view('front-end.index');
 })->name('home');
