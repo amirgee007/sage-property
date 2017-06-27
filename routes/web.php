@@ -11,32 +11,32 @@
 |
 */
 
+Route::get('/test', function () {
+    return view('admin.passwords.resetPassword');
+});
+
 Route::get('/', function () {
     return view('front-end.index');
-});
+})->name('home');
 
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => '/admin'], function() {
+Route::group(['middleware' => ['auth'] , 'prefix' => '/admin' ], function () {
 
 
-    Route::get('/', function () {
-        return view('admin.index');
-    })->middleware('auth');
-
-    Route::get('/dashboard', function () {
-        return view('admin.index');
-    })->middleware('auth');
-
-    Route::post('/dashboard', array(
-        'as' => 'post.dashboard',
+    Route::get('/', array(
+        'as' => 'get.admin.dashboard',
         'uses' => 'Admin\AdminController@dashboard'));
-
 
     Route::get('/dashboard', array(
         'as' => 'get.dashboard',
+        'uses' => 'Admin\AdminController@dashboard'));
+
+
+    Route::post('/dashboard', array(
+        'as' => 'post.dashboard',
         'uses' => 'Admin\AdminController@dashboard'));
 
 

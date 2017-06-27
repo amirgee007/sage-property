@@ -35,6 +35,11 @@
     <link href="/admin_sage/css/style-responsive.css" rel="stylesheet" />
     <link href="/admin_sage/css/xcharts.min.css" rel=" stylesheet">
     <link href="/admin_sage/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 </head>
 
 <body>
@@ -89,9 +94,10 @@
 <script src="/admin_sage/js/sparklines.js"></script>
 <script src="/admin_sage/js/charts.js"></script>
 <script src="/admin_sage/js/jquery.slimscroll.min.js"></script>
+
 <script>
 
-    //knob
+
     $(function() {
         $(".knob").knob({
             'draw' : function () {
@@ -136,9 +142,12 @@
     });
 
 </script>
+
+
 <script>
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 </script>
+
 
 @yield('script')
 

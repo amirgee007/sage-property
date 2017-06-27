@@ -9,12 +9,17 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('auth');
     }
 
     public function dashboard(){
 
-        return view('admin.index');
+        $notification = array(
+            'message' => 'Welcome to Admin Panel!',
+            'alert-type' => 'success'
+        );
+
+        return view('admin.index' ,compact('notification'));
 
     }
 }

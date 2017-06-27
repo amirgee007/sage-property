@@ -28,7 +28,7 @@
                 <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="/admin_joke/img/avatar1_small.jpg">
+                                <img alt="" src="/admin_sage/img/avatar1_small.jpg">
                             </span>
                     <span class="username">Jenifer Smith</span>
                     <b class="caret"></b>
