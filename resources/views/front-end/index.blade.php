@@ -1,7 +1,7 @@
 {{--@include('front-end.partials.base')--}}
 @extends('front-end.partials.base')
 @section('content')
-    <a href="{{ url('auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+
 <section id="our_story">
 
     <div class="container">
@@ -143,9 +143,8 @@
 
             </div>
 
-
-
         </div>
     </div>
 </section>
 @endsection
+

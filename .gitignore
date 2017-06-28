@@ -12,3 +12,4 @@ npm-debug.log
 /.env
 !/vendor/laravel/framework/src/Illuminate/Foundation/Auth/SendsPasswordResetEmails.php
 !/vendor/laravel/framework/src/Illuminate/Auth/Notifications/ResetPassword.php
+!/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php

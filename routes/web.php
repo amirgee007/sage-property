@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/test', function () {
+Route::get('/faceBookLogin/', function () {
 
-    return view('front-end.passwords.resetPassword');
-});
+    return view('front-end.passwords.updateFbData' ,compact('authUser'));
+})->name('faceBookLogin');
 
-Route::get('auth/facebook', 'AdminAuth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'AdminAuth\AuthController@handleProviderCallback');
+
+//Route::get('/faceBookLogin/{authUser}', ['uses' =>'app@showLoginDataRegister' , 'as' => 'fbRedirect']);
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+Route::get('auth/facebook', 'FaceBookLoginController@redirectToProvider');
+Route::get('auth/facebook/callback', 'FaceBookLoginController@handleProviderCallback');
+
 
 Route::get('/', function () {
     return view('front-end.index');

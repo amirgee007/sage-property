@@ -1,5 +1,8 @@
 
 <!-- Sign in Modal Login form-->
+
+
+
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
 
@@ -14,29 +17,24 @@
                         <div class="sign_logo"><img src="frontend/icons/Signin.png"/></br><span>Sign in</span></div>
 
                         <div class="sign_form">
-                            <form method="post" role="form" class="signInForm" action="{{ route('login') }}">
+                            <form method="post" role="form" class="signInForm" id="signInForm" action="{{ route('login') }}">
                                 {{ csrf_field() }}
 
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
                                         <label>email</label>
-                                        <input type="email" name="email" class="form-control form" id="email" placeholder=""/>
+                                        <input type="email" name="email" class="form-control form" id="email" placeholder="" required/>
 
-                                        @if ($errors->has('email'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
                                     </div>
                                     <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label>password</label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder=""/>
+                                        <input type="password" class="form-control" name="password" minlength="8" id="password" placeholder="" required/>
 
-                                        @if ($errors->has('password'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+
+                                            <span style="color: red;" class="help-block" id="errors">
+                                        <strong> </strong>
                                             </span>
-                                        @endif
+
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
@@ -47,7 +45,10 @@
 
 
                             <p class="new_here">NEW HERE? <a href="#" data-toggle="modal" data-target="#SignupModal" >SIGN UP NOW!</a></p>
-                            <a class="fb_sign" href="#"><img src="frontend/icons/fb.png" alt=""/></a>
+                            <a class="fb_sign" href="{{ url('auth/facebook') }}"><img src="frontend/icons/fb.png" alt=""/></a>
+
+{{--                            <a href="{{ url('auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>--}}
+
                             {{--<a class="forgot_pass" href="#">FORGOTTEN PASSWORD</a>--}}
 
                             <a  class="forgot_pass" data-toggle="modal" data-target="#forgotPassModal" title="Forgot Password" href="#"> FORGOTTEN PASSWORD?</a>
@@ -184,7 +185,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <!-- Button -->
-                                    <button type="submit" id="back_btn" name="submit" class="btn btn_s">Back</button>
+                                    <a href="{{route('home')}}" type="submit" id="back_btn" name="submit" class="btn btn_s">Back</a>
                                     <button type="submit" id="signup_btn" name="submit" class="btn btn_s"> Create an account</button>
                                 </div>
                             </form>
@@ -374,7 +375,6 @@
                                     </div><!-- item -->
 
 
-
                                     <div class="item">
                                         <a class="hoverfx" href="#">
                                             <div class="figure">
@@ -405,5 +405,40 @@
     </div>
 </div>
 <!-- PromoModal Modal-->
+
+<script>
+
+
+    var loginForm = $("#signInForm");
+    var error="{{$errors->first('password')}}";
+
+    loginForm.submit(function(e){
+        e.preventDefault();
+        var formData = loginForm.serialize();
+
+        $.ajax({
+            url:'/login',
+            type:'POST',
+            data:formData,
+            success: function(msg){
+                toastr.info("welcome to admin panel");
+
+                window.location.href='/admin';
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+                toastr.error("Password or Email Mismatch");
+                $("#errors").text("These credentials do not match our records.");
+
+
+            }
+
+        });
+    });
+
+
+
+</script>
+
 	
 

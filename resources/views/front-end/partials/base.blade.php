@@ -17,9 +17,15 @@
     <link rel="icon" href="frontend/img/favicon.ico" type="image/x-icon">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <style>
 
+        .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+
+            background-color: inherit;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -29,6 +35,7 @@
     @include('front-end.partials.footer')
     @include('front-end.partials.navigation')
     @include('front-end.partials.models')
+
 
     <!--Javascript-->
     <script src="frontend/js/jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -58,7 +65,16 @@ function closeS() {
 
     <script>
         $('div.alert').not('.alert-important').delay(2000).fadeOut(3000);
+
     </script>
+
+    @if ($errors->has('email') || $errors->has('name') || $errors->has('password'))
+        <script>
+            $(document).ready(function() {
+                $('#SignupModal').modal('show');
+            });
+        </script>
+    @endif
     <!-- Google analytics -->
     <!-- End google analytics -->
 </body>
