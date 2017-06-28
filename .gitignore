@@ -13,3 +13,4 @@ npm-debug.log
 !/vendor/laravel/framework/src/Illuminate/Foundation/Auth/SendsPasswordResetEmails.php
 !/vendor/laravel/framework/src/Illuminate/Auth/Notifications/ResetPassword.php
 !/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php
+/composer.lock

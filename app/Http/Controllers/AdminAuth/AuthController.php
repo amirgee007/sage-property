@@ -22,15 +22,15 @@ class  AuthController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = 'admin';
-    protected $guard = 'admin';
+    protected $redirectTo = '/';
+//    protected $guard = 'admin';
 
 
 
     public function showLoginForm( ){
 
         if (Auth::user()) {
-            return redirect('admin/');
+            return redirect('/');
         }
         flash('Sorry! Please try again.')->error();
         return back();
@@ -40,7 +40,7 @@ class  AuthController extends Controller
         public function logout(){
 
             Auth::logout();
-            flash('Successfully logout !');
+//            flash('Successfully logout !');
             return redirect('/');
 
     }

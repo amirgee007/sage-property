@@ -423,7 +423,7 @@
             success: function(msg){
                 toastr.info("welcome to admin panel");
 
-                window.location.href='/admin';
+                window.location.href='/';
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
 
