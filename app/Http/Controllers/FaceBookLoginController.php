@@ -35,7 +35,7 @@ class FaceBookLoginController extends Controller
         if(!is_null($authUser)){
 
             auth()->login($authUser);
-            return redirect('/admin');
+            return redirect('/');
         }
 
         $name =  trim(str_replace(' ', '', $user->name));
