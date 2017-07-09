@@ -32,8 +32,8 @@ $(document).ready(function(){
 	 nav:true,
       navText: [
 
-       "<img class='wow slideInLeft' src='icons/b.png' title='Next' width='25' height='25'/>",
-      "<img class='wow slideInRight' src='icons/a.png' title='Next' width='25' height='25'/>"
+       "<img class='wow slideInLeft' src='images/left.png' title='Next' width='25' height='25'/>",
+      "<img class='wow slideInRight' src='images/right.png' title='Next' width='25' height='25'/>"
       ],
      });
 	
@@ -48,7 +48,7 @@ $(document).ready(function(){
 	 nav:true,
       navText: [
 
-       "<img class='wow slideInLeft' src='img/b.png' title='Next' width='25' height='25'/>",
+       "<img class='wow slideInLeft' src='img/a.png' title='Next' width='25' height='25'/>",
       "<img class='wow slideInRight' src='img/a.png' title='Next' width='25' height='25'/>"
       ],
 	  

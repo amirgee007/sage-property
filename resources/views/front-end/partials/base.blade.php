@@ -42,8 +42,28 @@
     <script src="frontend/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="frontend/js/owl.carousel.min.js" type="text/javascript"></script>
     <script src="frontend/js/main.js" type="text/javascript"></script>
-	<script>
-	//menu
+
+    <script>
+        $(document).ready(function() {
+
+            var isSetQs="{{\App\SageProperty\Helper::hasSetQuestions()}}";
+            if (isSetQs){
+                $('#SignupIntroModal').modal('show');
+            }
+
+            {{--var showProperties = "{{isset($userPropertiesShow)}}";--}}
+
+            if ("{{session()->has('userPropertiesShow')}}"){
+                $('#PromoModal').modal('show');
+
+            }
+
+        });
+    </script>
+
+    <script>
+
+        //menu
 function openNav() {
     document.getElementById("myNav").style.height = "100%";
 }
@@ -65,13 +85,13 @@ function closeS() {
 
     <script>
         $('div.alert').not('.alert-important').delay(2000).fadeOut(3000);
-
     </script>
 
     @if ($errors->has('email') || $errors->has('name') || $errors->has('password'))
         <script>
             $(document).ready(function() {
                 $('#SignupModal').modal('show');
+
             });
         </script>
     @endif

@@ -73,12 +73,18 @@
                                 <h2 class="owl-title">A CLICK CLOSER TO DREAM HOME</h2>
                                 <p class="owl-caption hidden-xs">your ideal residence within your reach</p>
 
+                                {{--<div class="hero_action_btn">--}}
+                                    {{--<a data-toggle="modal" data-target="#SignupIntroModal" title="Invst/Buy" href="#" class="invest_btn">invst/buy</a>--}}
+                                    {{--<a data-toggle="modal" data-target="#HangoutModal"  title="Rent" href="#" class="rent_btn">rent</a>--}}
+                                {{--</div>--}}
+
+
                                 <div class="hero_action_btn">
-                                    <a data-toggle="modal" data-target="#SignupIntroModal" title="Invst/Buy" href="#" class="invest_btn">invst/buy</a>
-                                    <a data-toggle="modal" data-target="#HangoutModal"  title="Rent" href="#" class="rent_btn">rent</a>
+                                    <a href="#" class="invest_btn">invst/buy</a>
+                                    <a title="Rent" href="#" class="rent_btn">rent</a>
                                 </div>
 
-                                <a href="#feature" class="mouse-hover" data-toggle="modal" data-target="#PromoModal"><div class="mouse"></div></a>
+                                {{--<a href="#feature" class="mouse-hover" data-toggle="modal" data-target="#PromoModal"><div class="mouse"></div></a>--}}
 
                             </div>
                             <img src="frontend/images/Banner01.jpg" class="owl-img">

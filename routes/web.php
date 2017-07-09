@@ -1,15 +1,12 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+Route::get('/test', function () {
+
+    return \App\SageProperty\Helper::getMonthlySalaryQs();
+});
+
+
 
 Route::get('/faceBookLogin/', function () {
 
@@ -28,6 +25,12 @@ Route::get('auth/facebook/callback', 'FaceBookLoginController@handleProviderCall
 Route::get('/', function () {
     return view('front-end.index');
 })->name('home');
+
+Route::post('/storeQuestions', array(
+    'as' => 'store.questions',
+    'uses' => 'UserQuestionController@storeQuestions'));
+
+
 
 Auth::routes();
 

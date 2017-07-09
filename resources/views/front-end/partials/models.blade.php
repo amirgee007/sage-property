@@ -1,8 +1,6 @@
 
 <!-- Sign in Modal Login form-->
 
-
-
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
 
@@ -221,8 +219,7 @@
                             <div class="sign_intro_content">
                                 <p>we value your opinions as they allow us to understand you better and provide the quality choices that best suit you.</p>
                             </div>
-                            <a href="#">continue</a>
-
+                            <a data-toggle="modal" data-target="#QuestionnaireModal" href="#">Continue</a>
 
                         </div><!-- sign_intro -->
                     </div>
@@ -233,6 +230,72 @@
     </div>
 </div>
 <!-- Sign Up  Intro Modal-->
+
+<!-- QuestionnaireModal Modal-->
+<div class="modal fade" id="QuestionnaireModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+
+                        <div class="hangout_form">
+                            <span id="complete_msg">Hooray! Is completed!</span>
+                            <h2><span>06</span> HANGOUT SPOTS<p>Questionnaire Tell Us About?</p>
+                            </h2>
+                            <form action="{{route('store.questions')}}" method="POST" enctype="multipart/form-data">
+                                {{csrf_field()}}
+
+
+                                <div class="box">
+
+                                    <p>
+                                        <select name="monthlySalary" style="background:transparent;border:1px solid #505050;border-bottom:1px solid #505050;color:#505050;font-size:20px;font-weight:100;" class="form-control" required>
+                                           <option value="" selected>Monthly Income</option>
+                                           <option value="Rm 3000 - 3999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 3000 - 3999') ? 'Selected' : ''}}>Rm 3000 - 3999</option>
+                                           <option value="Rm 4000 - 4999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 4000 - 4999') ? 'Selected' : ''}}>Rm 4000 - 4999</option>
+                                           <option value="Rm 5000 - 5999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 5000 - 5999') ? 'Selected' : ''}}>Rm 5000 - 5999</option>
+                                           <option value="Rm 6000 - 6999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 6000 - 6999') ? 'Selected' : ''}}>Rm 6000 - 6999</option>
+                                           <option value="Rm 7000 - 7999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 7000 - 7999') ? 'Selected' : ''}}>Rm 7000 - 7999</option>
+                                           <option value="Rm 8000 - 8999" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 8000 - 8999') ? 'Selected' : ''}}>Rm 8000 - 8999</option>
+                                           <option value="Rm 9000 onwards" {{(\App\SageProperty\Helper::getMonthlySalaryQs()=='Rm 9000 onwards') ? 'Selected' : ''}}>Rm 9000 onwards</option>
+                                        </select>
+                                        <label for="c1">What's your monthly income?</label>
+                                    </p>
+
+                                    <p>
+                                        <input type="radio" name="propertyType" value="simple" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='simple') ? 'checked' : ''}}> Simple<br>
+                                        <input type="radio" name="propertyType" value="modern" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='modern') ? 'checked' : ''}}> Modern<br>
+                                        <input type="radio" name="propertyType" value="premium" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='premium') ? 'checked' : ''}}> Premium<br>
+                                    </p>
+
+                                    <p>
+                                        <label for="c1">What type of property would you like to stay in??</label>
+                                    </p>
+
+
+
+                                </div>
+                                <input type="submit" value="complete" />
+
+                                <input type="submit" id="black_btn" value="Back">
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!--Container -->
+
+        </div>
+    </div>
+</div>
+<!-- QuestionnaireModal Modal-->
+
 
 
 
@@ -297,7 +360,6 @@
     </div>
 </div>
 <!-- HangoutModal Modal-->
-
 
 
 
@@ -408,7 +470,6 @@
 
 <script>
 
-
     var loginForm = $("#signInForm");
     var error="{{$errors->first('password')}}";
 
@@ -422,14 +483,12 @@
             data:formData,
             success: function(msg){
                 toastr.info("welcome to admin panel");
-
                 window.location.href='/';
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
 
                 toastr.error("Password or Email Mismatch");
                 $("#errors").text("These credentials do not match our records.");
-
 
             }
 

@@ -16,8 +16,17 @@
                             <input id="sub-group-1" type="checkbox" hidden />
                             <label for="sub-group-1" class="sg1"><span class="fa fa-angle-up"></span> MY QUESTIONNAIRES</label>
                             <ul class="sub-group-list">
-                                <li><a href="#">MY ANSWERS</a></li>
-                                <li><a href="#">CUSTOMIZATION</a></li>
+                                <li>
+
+                                    {{--<a href="#">MY ANSWERS</a>--}}
+                                    <a data-toggle="modal" data-target="#QuestionnaireModal" href="#">MY ANSWERS</a>
+
+                                </li>
+                                <li>
+                                    {{--<a href="#">CUSTOMIZATION</a>--}}
+                                    <a data-toggle="modal" data-target="#QuestionnaireModal" href="#">CUSTOMIZATION</a>
+
+                                </li>
                             </ul>
                         </li>
                     </ul>
