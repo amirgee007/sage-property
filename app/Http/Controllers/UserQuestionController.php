@@ -14,7 +14,7 @@ class UserQuestionController extends Controller
 ////////////////////////////////////todo: Make 2 columns in data base to avoid complexity of code
 
             if (Auth::check()){
-                $userQs1 = UserQuestion::firstorCreate([
+                $userQs1 = UserQuestion::firstOrNew([
                     'user_id' =>Auth::user()->id ,
                     'question' => 'monthlySalary' ,
                 ]);
@@ -22,7 +22,7 @@ class UserQuestionController extends Controller
                 $userQs1->save();
 
 
-                $userQs2 = UserQuestion::firstorCreate([
+                $userQs2 = UserQuestion::firstOrNew([
                     'user_id' =>Auth::user()->id ,
                     'question' => 'propertyType' ,
                 ]);
