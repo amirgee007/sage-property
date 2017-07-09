@@ -33,9 +33,6 @@
                                     </li>
 
                                     <li>
-                                        <a href="{{ route('get.dashboard') }}">
-                                            <i class="icon_key_alt"></i> Admin
-                                        </a>
                                     </li>
                                 </ul>
                             </ul>
