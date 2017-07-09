@@ -25,7 +25,8 @@ class Helper
         $data = null;
         if (Auth::check()){
             $qs = Auth::user()->userQuestions->pluck( 'answer' ,'question')->toArray();
-            $data =($qs['monthlySalary']);
+
+            $data =(isset($qs['monthlySalary']) ? $qs['monthlySalary'] : null);
 
         }
         return $data;
@@ -35,7 +36,9 @@ class Helper
         $data = null;
         if (Auth::check()){
             $qs = Auth::user()->userQuestions->pluck( 'answer' ,'question')->toArray();
-            $data = ($qs['propertyType']);
+
+            $data =(isset($qs['propertyType']) ? $qs['propertyType'] : null);
+
 
         }
         return $data;

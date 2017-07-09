@@ -268,9 +268,9 @@
                                     </p>
 
                                     <p>
-                                        <input type="radio" name="propertyType" value="simple" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='simple') ? 'checked' : ''}}> Simple<br>
-                                        <input type="radio" name="propertyType" value="modern" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='modern') ? 'checked' : ''}}> Modern<br>
-                                        <input type="radio" name="propertyType" value="premium" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='premium') ? 'checked' : ''}}> Premium<br>
+                                        <input type="radio" name="propertyType" value="simple" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='simple') ? 'checked' : ''}} required> Simple<br>
+                                        <input type="radio" name="propertyType" value="modern" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='modern') ? 'checked' : ''}} required> Modern<br>
+                                        <input type="radio" name="propertyType" value="premium" {{(\App\SageProperty\Helper::getpropertyTypeQs()=='premium') ? 'checked' : ''}} required> Premium<br>
                                     </p>
 
                                     <p>
@@ -282,9 +282,8 @@
                                 </div>
                                 <input type="submit" value="complete" />
 
-                                <input type="submit" id="black_btn" value="Back">
+                                <a href="{{route('home')}}" type="button" style="float: right;color: #fff;padding: 15px 20px;font-size: 18px;display: inline-block;letter-spacing: 0px;font-weight: 100;text-transform: uppercase;border: none;margin-left: 10px;margin-top: 60px;width: 155px;" id="black_btn">Back</a>
                             </form>
-
 
                         </div>
                     </div>
