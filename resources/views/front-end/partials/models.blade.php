@@ -36,7 +36,6 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <!-- Button -->
                                     <button type="submit" id="signin_btn" name="submit" class="btn signin_btn"> <img src="frontend/icons/Next-Arrow.png"></button>
                                 </div>
                             </form>
