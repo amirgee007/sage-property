@@ -15,7 +15,7 @@
                             <ul style="" class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="/images/user.png" style="width: 30px; height: 30px;">
+                                <img alt="" src="/frontend/icons/Userx24.png" style="width: 30px; height: 30px;">
                             </span>
                                     <span class="username">{{ Auth::user()->name }}</span>
                                     <b class="caret"></b>
@@ -63,7 +63,6 @@
                     <!-- </div> -->
 
 
-
                     <!--TESTIMONIAL 1 -->
                     <div class="item">
                         <div class="">
@@ -80,7 +79,7 @@
 
 
                                 <div class="hero_action_btn">
-                                    <a href="#" class="invest_btn">invst/buy</a>
+                                    <a href="#" class="invest_btn">Invest/Buy</a>
                                     <a title="Rent" href="#" class="rent_btn">rent</a>
                                 </div>
 
